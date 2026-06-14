@@ -9,13 +9,13 @@ on:
         type: string
 jobs:
   build-linux-x64:
-    uses: ./.github/workflows/linux-64.yml
+    uses: ./.github/workflows/linux-x64.yml
     with:
       angleVersion: ${{ inputs.angleVersion }}
     secrets: inherit
 
   build-windows-x64:
-    uses: ./.github/workflows/windows-64.yml
+    uses: ./.github/workflows/windows-x64.yml
     with:
       angleVersion: ${{ inputs.angleVersion }}
     secrets: inherit
