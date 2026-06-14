@@ -1,0 +1,21 @@
+name: Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      angleVersion:
+        description: "Angle version"
+        required: true
+        type: string
+jobs:
+  build-linux-x64:
+    uses: ./.github/workflows/linux-64.yml
+    with:
+      angleVersion: ${{ inputs.angleVersion }}
+    secrets: inherit
+
+  build-windows-x64:
+    uses: ./.github/workflows/windows-64.yml
+    with:
+      angleVersion: ${{ inputs.angleVersion }}
+    secrets: inherit

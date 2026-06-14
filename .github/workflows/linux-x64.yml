@@ -1,12 +1,11 @@
 name: linux-x64
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-  schedule:
-    - cron: '0 0 * * 0'
+  workflow_call:
+    inputs:
+      angleVersion:
+        required: true
+        type: string
 
 jobs:
   build-linux-x64:
@@ -16,7 +15,7 @@ jobs:
         run: |
           sleep 60
           mkdir /tmp/output/
-          echo "Hello Linux" >> /tmp/output/linux-x64.txt
+          echo "Hello Linux "${{ inputs.angleVersion }} >> /tmp/output/linux-x64.txt
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
