@@ -16,7 +16,7 @@ jobs:
         run: |
           sleep 200
           mkdir angle-windows-x64
-          echo "Hello Windows "${{ angleVersion }} >> angle-windows-x64/windows-x64.txt
+          echo "Hello Windows "${{ inputs.angleVersion }} >> angle-windows-x64/windows-x64.txt
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
