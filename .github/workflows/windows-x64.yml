@@ -14,9 +14,9 @@ jobs:
       - name: Pack
         shell: bash
         run: |
-          sleep 200
-          mkdir angle-windows-x64
-          echo "Hello Windows ${{ inputs.angleVersion }}" >> angle-windows-x64/windows-x64.txt
+          wget https://github.com/Dgzt/angle-vulkan-natives/releases/download/v7871/angle-windows-x64.zip
+          unzip angle-windows-x64.zip
+          ls -la
       - name: Upload Artifact
         uses: actions/upload-artifact@v7
         with:
