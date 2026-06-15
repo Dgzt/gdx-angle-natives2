@@ -25,13 +25,13 @@ jobs:
     needs: [build-linux-x64, build-windows-x64]
     steps:
       - name: Download linux-x64 Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: angle-linux-x64
           path: download-directory/
 
       - name: Download windows-x64 Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: angle-windows-x64
           path: download-directory/
