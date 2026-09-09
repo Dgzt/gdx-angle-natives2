@@ -41,8 +41,8 @@ jobs:
       - name: Setup MSVC
         uses: ilammy/msvc-dev-cmd@v1
         with:
-          arch: x86
-          sdk: 10.0.26100.0
+          arch: x64
+          sdk: 10.0.28000.0
 
       - name: Check Windows SDK
         shell: powershell
