@@ -38,6 +38,11 @@ jobs:
         run: |
           git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
 
+      - uses: ChristopheLav/windows-sdk-install@v1
+        with:
+          version-sdk: 28000
+          features: 'OptionId.DesktopCPPx64'
+
       - name: Check Windows SDK
         shell: powershell
         run: |
