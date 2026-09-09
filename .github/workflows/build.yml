@@ -38,6 +38,12 @@ jobs:
         run: |
           git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
 
+      - name: Setup MSVC
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x86
+          sdk: 10.0.26100.0
+
       - name: Check Windows SDK
         shell: powershell
         run: |
