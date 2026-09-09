@@ -37,25 +37,10 @@ jobs:
       - name: Fetch depot_tools
         run: |
           git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
-
       - uses: ChristopheLav/windows-sdk-install@v1
         with:
           version-sdk: 28000
           features: 'OptionId.DesktopCPPx64'
-
-      - name: Check Windows SDK
-        shell: powershell
-        run: |
-          Write-Host "Windows SDKs:"
-          Get-ChildItem "C:\Program Files (x86)\Windows Kits\10\include" |
-            Select-Object Name
-      
-          Write-Host "INCLUDE:"
-          Write-Host $env:INCLUDE
-      
-          Write-Host "WindowsSDKVersion:"
-          Write-Host $env:WindowsSDKVersion
-          
       - name: Build
         shell: cmd
         run: |
@@ -98,6 +83,10 @@ jobs:
       - name: Fetch depot_tools
         run: |
           git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
+      - uses: ChristopheLav/windows-sdk-install@v1
+        with:
+          version-sdk: 28000
+          features: 'OptionId.DesktopCPParm64'
       - name: Build
         shell: cmd
         run: |
