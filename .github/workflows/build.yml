@@ -26,7 +26,7 @@ jobs:
           fi
 
   build-windows-x64:
-    runs-on: windows-2022
+    runs-on: windows-2025
     needs: load-rev
     steps:
       - name: Checkout sources
@@ -37,12 +37,6 @@ jobs:
       - name: Fetch depot_tools
         run: |
           git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
-
-      - name: Setup MSVC
-        uses: ilammy/msvc-dev-cmd@v1
-        with:
-          arch: x64
-          sdk: 10.0.28000.0
 
       - name: Check Windows SDK
         shell: powershell
